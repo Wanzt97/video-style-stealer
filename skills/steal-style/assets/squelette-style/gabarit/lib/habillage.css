@@ -1,0 +1,25 @@
+/*
+ * Habillage.
+ *
+ * Le bloc :root reprend HABILLAGE-reference.md. Pour passer à une marque : remplacer ce bloc
+ * et les polices, rien d'autre. Les classes plus bas appliquent la composition de FICHE.md (section 4).
+ *
+ * Polices : déposer des polices libres dans assets/fonts/, avec leur licence, et les déclarer ici
+ * en @font-face sous un nom de rôle ("Titre", "Technique"). Les mêmes noms vont dans Moteur.pret().
+ */
+
+:root {
+  --fond: #101010;
+  --texte: #f2f2f2;
+  --gris: #8a8a8a;
+  --accent: #f2f2f2;
+  --police-titre: system-ui, sans-serif;
+  --police-technique: ui-monospace, monospace;
+}
+
+.scene-fond { position: absolute; inset: 0; background: var(--fond); color: var(--texte); overflow: hidden; }
+.scene-fond p { margin: 0; }
+.titre { font-family: var(--police-titre); font-weight: 800; font-size: 120px; line-height: 1; letter-spacing: -0.02em; }
+.technique { font-family: var(--police-technique); font-size: 32px; color: var(--gris); letter-spacing: 0.04em; }
+.accent { color: var(--accent); }
+.a-remplacer { border: 2px dashed var(--gris); color: var(--gris); display: grid; place-items: center; font-family: var(--police-technique); font-size: 28px; }

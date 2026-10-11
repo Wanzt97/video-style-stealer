@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!--
+      MODÈLE m00 — exemple de départ. À remplacer par les vrais modèles du style, un par type de scène.
+      Sert à : montrer la forme d'un modèle. Aucune durée d'animation ici : seulement des temps de voix.
+    -->
+  </head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; }
+        #m00-bloc { position: absolute; left: 12%; top: 30%; width: 70%; }
+        #m00-source { margin-bottom: 40px; }
+        #m00-chiffre { margin-top: 60px; }
+        #m00-piece { position: absolute; right: 8%; bottom: 10%; width: 420px; height: 240px; }
+      </style>
+
+      <div id="root" data-composition-id="m00" data-width="1920" data-height="1080">
+        <div class="scene-fond">
+          <div id="m00-bloc">
+            <p id="m00-source" class="technique">Source · date</p>
+            <p id="m00-phrase" class="titre">La phrase clé, dite un mot après l'autre</p>
+            <p id="m00-chiffre" class="titre accent">0</p>
+          </div>
+          <div id="m00-piece" class="a-remplacer" data-layout-ignore="">À remplacer : la pièce</div>
+        </div>
+      </div>
+
+      <script>
+        Moteur.pret([], () => {
+          const tl = gsap.timeline({ paused: true });
+          const sc = Moteur.scene({ tl, duree: 8 });
+
+          // ---------- LES BEATS (secondes locales à la scène) ----------
+          // Démonstration : des temps réguliers. Dans un vrai montage, recopier le début de chaque mot.
+          const MOTS_PHRASE = Moteur.cadence(0.6, 8, 0.28); // 8 mots
+          const MOT_CHIFFRE = 3.4;   // début du nombre dans la voix
+          const FIN_CHIFFRE = 4.6;   // fin du nombre dans la voix
+          const MOT_PIECE = 5.6;
+
+          sc.apparaitre("#m00-source", 0.2);
+          sc.motAMot("#m00-phrase", MOTS_PHRASE);
+          sc.compteur("#m00-chiffre", { a: 1240, t: sc.auMot(MOT_CHIFFRE), fin: FIN_CHIFFRE });
+          sc.apparaitre("#m00-piece", sc.auMot(MOT_PIECE));
+
+          window.__timelines["m00"] = sc.terminer();
+        });
+      </script>
+    </template>
+  </body>
+</html>

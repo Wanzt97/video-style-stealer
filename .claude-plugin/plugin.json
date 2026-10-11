@@ -1,0 +1,8 @@
+{
+  "name": "video-style-stealer",
+  "description": "Donne un lien de vidéo, repars avec son style de montage : une fiche de règles mesurées, un habillage, un gabarit HyperFrames et un skill prêt à installer.",
+  "version": "0.1.0",
+  "author": { "name": "Komi Wanzt Koffi" },
+  "license": "MIT",
+  "keywords": ["video", "montage", "motion-design", "hyperframes", "design-system"]
+}

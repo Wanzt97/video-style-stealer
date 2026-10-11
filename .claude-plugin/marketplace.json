@@ -1,0 +1,12 @@
+{
+  "name": "wanzt",
+  "owner": { "name": "Komi Wanzt Koffi" },
+  "metadata": { "description": "Outils de Wanzt pour la vidéo." },
+  "plugins": [
+    {
+      "name": "video-style-stealer",
+      "source": "./",
+      "description": "Donne un lien de vidéo, repars avec son style de montage : fiche de règles mesurées, habillage, gabarit HyperFrames et skill prêt à installer."
+    }
+  ]
+}

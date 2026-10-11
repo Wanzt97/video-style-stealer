@@ -1,0 +1,18 @@
+{
+  "projet": "demonstration-du-gabarit",
+  "largeur": 1920,
+  "hauteur": 1080,
+  "scenes": [
+    { "id": "v01", "type": "visage", "start": 0, "end": 3, "phrase": "La phrase dite face caméra." },
+    { "id": "m00", "type": "animation", "modele": "m00-exemple", "fichier": "compositions/m00-exemple.html",
+      "decision": 1, "pourquoi": "La raison du passage en animation, en une phrase.",
+      "start": 3, "end": 11,
+      "beats": [
+        { "t": 0.2, "geste": "apparaitre", "cible": "source", "mot": "" },
+        { "t": 0.6, "geste": "motAMot", "cible": "phrase", "mot": "premier mot de la phrase" },
+        { "t": 3.4, "geste": "compteur", "cible": "chiffre", "mot": "le nombre prononcé" },
+        { "t": 5.6, "geste": "apparaitre", "cible": "pièce", "mot": "le mot qui l'annonce" }
+      ] },
+    { "id": "v02", "type": "visage", "start": 11, "end": 14, "phrase": "Le retour au visage." }
+  ]
+}
